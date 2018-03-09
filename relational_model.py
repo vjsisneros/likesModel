@@ -39,7 +39,8 @@ def create_xml(profile_id, gender, age, output_path):
     target_file.close()
 
 def convert_age_to_class(n):
-
+    
+    n = int(n)
     if n <= 24:
         return "xx-24"
     elif n <= 34:
@@ -141,8 +142,8 @@ def predict_gender_with_likes(input_path):
     
     joined_df  = userid_df.join(p_gender_df)
     joined_df = joined_df.rename(columns={0: 'gender_likes'})
-#    print(type(joined_df))
-#    print(joined_df)
+    print(type(joined_df))
+    print(joined_df)
     
     return(joined_df)
     
@@ -174,4 +175,4 @@ def predict_gender_with_likes(input_path):
 #            break
 
     print("Done") 
-#predict_gender_with_likes()
+predict_gender_with_likes('C:/Users/admin/Desktop/UserProfilingRelation1.0/')
